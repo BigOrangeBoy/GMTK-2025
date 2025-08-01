@@ -9,3 +9,7 @@ This is a repo for BigOrangeBoy's team submission to Game Jam GMTK 2025
 - Added an asset (Simple Poly City)
 - Added basic player movement and camera movement
 - Added basic UI.
+
+# Interaction System Update
+- Added Base Interaction System.
+- Work in progress
