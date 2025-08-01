@@ -13,3 +13,8 @@ This is a repo for BigOrangeBoy's team submission to Game Jam GMTK 2025
 # Interaction System Update
 - Added Base Interaction System.
 - Work in progress
+
+# Updated Interaction System
+- Added Time Event System
+- Added framework of bank robbery
+- Updated Interaction logic and added UI messages.

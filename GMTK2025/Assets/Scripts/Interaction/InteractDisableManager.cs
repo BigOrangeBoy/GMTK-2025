@@ -33,7 +33,7 @@ public class InteractDisableManager : MonoBehaviour
                 Debug.Log("[Interact Disable Manager]: Player object is null!");
             }
             interactor.enabled = false;
-            //ExamineUIManager.instance.EnableCrosshair(false);
+            InteractUIManager.instance.ToggleCrosshair(false);
         }
         else
         {
@@ -48,7 +48,7 @@ public class InteractDisableManager : MonoBehaviour
                 Debug.Log("[Interact Disable Manager]: Player object is null!");
             }
             interactor.enabled = true;
-           //ExamineUIManager.instance.EnableCrosshair(true);
+            InteractUIManager.instance.ToggleCrosshair(true);
         }
     }
 }

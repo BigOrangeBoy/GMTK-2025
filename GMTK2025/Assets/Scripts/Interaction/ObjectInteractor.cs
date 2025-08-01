@@ -9,6 +9,7 @@ public class ObjectInteractor : MonoBehaviour
 
     private PlayerInputManager plrInput = null;
     private InteractObject currentInteractableObject = null;
+    private OutlineMarker currentOutlineObject = null;
     private bool isHighlightVisible = false;
 
     private void Start()
@@ -36,6 +37,7 @@ public class ObjectInteractor : MonoBehaviour
         if (interactableObject != null)
         {
             currentInteractableObject = interactableObject;
+            currentOutlineObject = currentInteractableObject.GetComponent<OutlineMarker>();
             HighlightInteractUI(true, currentInteractableObject.itemName);
         }
         else
@@ -44,7 +46,7 @@ public class ObjectInteractor : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E) && !plrInput.isPaused)
         {
-            if (currentInteractableObject != null)
+            if (currentInteractableObject != null && !currentInteractableObject.isInteracting)
             {
                 TryInteract();
             }
@@ -53,6 +55,20 @@ public class ObjectInteractor : MonoBehaviour
                 Debug.Log("[Interactor]: No Interactable Object Found!");
             }
         }
+    }
+
+    private void TryInteract()
+    {
+        if (currentInteractableObject == null)
+        {
+            return;
+        }
+        else
+        {
+            StartCoroutine(HandleQuickItemInteraction(currentInteractableObject));
+        }
+
+        HighlightInteractUI(false, null);
     }
 
     private void ClearInteractables()
@@ -71,21 +87,8 @@ public class ObjectInteractor : MonoBehaviour
             return;
         }
         isHighlightVisible = state;
+        currentOutlineObject.ShowOutline(state);
         //InteractUIManager.instance.HighlightShowUI(isHighlightVisible, itemName);
-    }
-
-    private void TryInteract()
-    {
-        if (currentInteractableObject == null)
-        {
-            return;
-        }
-        else
-        {
-            StartCoroutine(HandleQuickItemInteraction(currentInteractableObject));
-        }
-
-        HighlightInteractUI(false, null);
     }
 
     private IEnumerator HandleQuickItemInteraction(InteractObject eventItem)
