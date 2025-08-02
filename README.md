@@ -18,3 +18,7 @@ This is a repo for BigOrangeBoy's team submission to Game Jam GMTK 2025
 - Added Time Event System
 - Added framework of bank robbery
 - Updated Interaction logic and added UI messages.
+
+# Added 'Untie The Knot' Event!
+- Added 'Untie The Knot' Event!
+- Moved Our own created assets to Graphics > Models (Folder)

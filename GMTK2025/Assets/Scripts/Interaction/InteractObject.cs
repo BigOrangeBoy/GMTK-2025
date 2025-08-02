@@ -26,8 +26,8 @@ public class InteractObject : MonoBehaviour
     {
         if (eventItem == EventItem.Knot)
         {
-            //BehaviourScript script = gameObject.GetComponent<BehaviourScript>();
-            //script.InitilizeSystem();
+            KnotBehaviour knotScript = gameObject.GetComponent<KnotBehaviour>();
+            knotScript.InitilizeSystem();
         }
         else if (eventItem == EventItem.Telephone)
         {
