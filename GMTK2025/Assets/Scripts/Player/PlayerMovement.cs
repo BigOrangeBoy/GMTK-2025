@@ -45,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
+        if (!moveAllowed)
+        {
+            return;
+        }
+
         float x = 0, z = 0;
         if (!isFroze)
         {
@@ -74,6 +79,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isRunning = false;
             movementSpeed -= 10;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("John") && !EventBehaviour.instance.hasTalkedWithJohn)
+        {
+            isFroze = true;
+            DialougeBehaviour.instance.StartDialouge(1);
         }
     }
 }

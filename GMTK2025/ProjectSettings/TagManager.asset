@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - InteractableObject
+  - John
   layers:
   - Default
   - TransparentFX

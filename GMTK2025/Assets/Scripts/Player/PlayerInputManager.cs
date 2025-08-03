@@ -11,6 +11,7 @@ public class PlayerInputManager : MonoBehaviour
     internal bool haveCursor = false;
     internal bool isPaused = false;
     internal bool isInteracting = false;
+    internal bool isInEvent = true;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleCursorAndPause()
     {
-        if (Input.GetKeyUp(escapeKey) && !isInteracting)
+        if (Input.GetKeyUp(escapeKey) && !isInteracting && !isInEvent)
         {
             isPaused = !isPaused;
             if (!haveCursor)

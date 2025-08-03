@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum EventItem : byte
 {
-    Knot, Telephone
+    Knot, Telephone, Collectable, Checkout
 }
 
 public class InteractObject : MonoBehaviour
@@ -33,6 +33,16 @@ public class InteractObject : MonoBehaviour
         {
             TelephoneBehaviour telephoneScript = gameObject.GetComponent<TelephoneBehaviour>();
             telephoneScript.InitilizeSystem();
+        }
+        else if (eventItem == EventItem.Collectable)
+        {
+            CollectableBehaviour collectableScript = gameObject.GetComponent<CollectableBehaviour>();
+            collectableScript.InitilizeSystem();
+        }
+        else if (eventItem == EventItem.Checkout)
+        {
+            CheckoutBehaviour checkoutScript = gameObject.GetComponent<CheckoutBehaviour>();
+            checkoutScript.InitilizeSystem();
         }
     }
 
