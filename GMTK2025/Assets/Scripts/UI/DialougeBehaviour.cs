@@ -121,6 +121,7 @@ public class DialougeBehaviour : MonoBehaviour
             }
             else
             {
+                EventBehaviour.instance.hasTalkedWithJohn = true;
                 EndDialouge();
             }
             dialougeIndex++;

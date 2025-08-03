@@ -73,12 +73,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             isRunning = true;
-            movementSpeed += 10;
+            movementSpeed += 4;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift) && isRunning)
         {
             isRunning = false;
-            movementSpeed -= 10;
+            movementSpeed -= 4;
         }
     }
 
